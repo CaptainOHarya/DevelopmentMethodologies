@@ -63,7 +63,7 @@ public class PhoneBookTest {
     }
 
     @Test
-    // Проверка что метод не вернёт нуль, если номер сущетсвует
+    // Проверка что метод не вернёт нуль, если номер существует
     public void testFindByNumber2() {
         PhoneBook phoneBook = new PhoneBook();
         phoneBook.add("Лилия", "89090123763");
