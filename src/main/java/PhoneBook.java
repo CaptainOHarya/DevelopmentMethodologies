@@ -7,7 +7,9 @@ import java.util.TreeMap;
  * @date 04.02.2023 15:08
  */
 public class PhoneBook {
-    public int add(String name, String phoneNumber) {
-        return 0;
+    private Map<String, String> phoneGuide = new TreeMap<>();
+    public int add(String name, String number) {
+        phoneGuide.put(name, number);
+        return phoneGuide.size();
     }
 }
