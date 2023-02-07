@@ -48,5 +48,33 @@ public class PhoneBookTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    // Проверка что метод правильно возвращает имя по номеру телефона
+    public void testFindByNumber1() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Лилия", "89090123763");
+        phoneBook.add("Мария Тундра", "89119991158");
+        phoneBook.add("Анатолий Касперчак", "89237637878");
+        phoneBook.add("Ксения Мировая", "80909008651");
+        phoneBook.add("Инопланетянин Кеша", "++K90233LF");
+        String expected = phoneBook.findByNumber("80909008651");
+        String actual = "Ксения Мировая";
+        Assertions.assertSame(expected, actual);
+    }
+
+    @Test
+    // Проверка что метод не вернёт нуль, если номер сущетсвует
+    public void testFindByNumber2() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Лилия", "89090123763");
+        phoneBook.add("Мария Тундра", "89119991158");
+        phoneBook.add("Анатолий Касперчак", "89237637878");
+        phoneBook.add("Ксения Мировая", "80909008651");
+        phoneBook.add("Инопланетянин Кеша", "++K90233LF");
+        String expected = phoneBook.findByNumber("89237637878");
+        String actual = null;
+        Assertions.assertNotSame(expected, actual);
+    }
+
 
 }

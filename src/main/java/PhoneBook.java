@@ -8,8 +8,14 @@ import java.util.TreeMap;
  */
 public class PhoneBook {
     private Map<String, String> phoneGuide = new TreeMap<>();
+
     public int add(String name, String number) {
         phoneGuide.put(name, number);
         return phoneGuide.size();
+    }
+
+
+    public String findByNumber(String number) {
+       return null;
     }
 }
