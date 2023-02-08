@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 /**
  * @author Leonid Zulin
  * @date 04.02.2023 15:08
@@ -104,6 +106,21 @@ public class PhoneBookTest {
         String expected = phoneBook.findByName("Инопланетянин Кеша");
         String actual = "++K90233LF";
         Assertions.assertSame(expected, actual);
+    }
+
+    @Test
+    // проверка поиска по имени
+    public void testPrintAllNames() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Лилия", "89090123763");
+        phoneBook.add("Мария", "89119991158");
+        phoneBook.add("Анатолий", "89237637878");
+        phoneBook.add("Ксения", "80909008651");
+        phoneBook.add("Кеша", "++K90233LF");
+        phoneBook.add("Феликс", "89057638123");
+        Object[] expected = phoneBook.printAllNames();
+        Object[] actual = {"Анатолий", "Кеша", "Ксения", "Лилия", "Мария", "Феликс"};
+        Assertions.assertArrayEquals(expected, actual);
     }
 
 }
