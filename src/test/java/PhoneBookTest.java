@@ -76,5 +76,34 @@ public class PhoneBookTest {
         Assertions.assertNotSame(expected, actual);
     }
 
+    @Test
+    // проверка поиска по имени, несоответсвие
+    public void testFindByName1() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Лилия", "89090123763");
+        phoneBook.add("Мария Тундра", "89119991158");
+        phoneBook.add("Анатолий Касперчак", "89237637878");
+        phoneBook.add("Ксения Мировая", "80909008651");
+        phoneBook.add("Инопланетянин Кеша", "++K90233LF");
+        phoneBook.add("Феликс Романовский", "89057638123");
+        String expected = phoneBook.findByNumber("Феликс Романовский");
+        String actual = "80909008651";
+        Assertions.assertNotSame(expected, actual);
+    }
+
+    @Test
+    // проверка поиска по имени
+    public void testFindByName2() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Лилия", "89090123763");
+        phoneBook.add("Мария Тундра", "89119991158");
+        phoneBook.add("Анатолий Касперчак", "89237637878");
+        phoneBook.add("Ксения Мировая", "80909008651");
+        phoneBook.add("Инопланетянин Кеша", "++K90233LF");
+        phoneBook.add("Феликс Романовский", "89057638123");
+        String expected = phoneBook.findByNumber("Инопланетянин Кеша");
+        String actual = "++K90233LF";
+        Assertions.assertSame(expected, actual);
+    }
 
 }
