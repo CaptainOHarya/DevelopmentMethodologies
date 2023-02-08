@@ -42,7 +42,7 @@ public class PhoneBook {
             System.out.println(name);
         }
         scanner.close();
-        phoneBook.printAllNames();
+        System.out.println(phoneBook.printAllNames());
 
     }
 
@@ -64,6 +64,7 @@ public class PhoneBook {
     }
 
     public Object[] printAllNames() {
-        return null;
+        Object[] arrayName = phoneGuide.keySet().toArray();
+        return arrayName;
     }
 }
