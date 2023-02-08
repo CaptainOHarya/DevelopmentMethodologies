@@ -86,7 +86,7 @@ public class PhoneBookTest {
         phoneBook.add("Ксения Мировая", "80909008651");
         phoneBook.add("Инопланетянин Кеша", "++K90233LF");
         phoneBook.add("Феликс Романовский", "89057638123");
-        String expected = phoneBook.findByNumber("Феликс Романовский");
+        String expected = phoneBook.findByName("Феликс Романовский");
         String actual = "80909008651";
         Assertions.assertNotSame(expected, actual);
     }
@@ -101,7 +101,7 @@ public class PhoneBookTest {
         phoneBook.add("Ксения Мировая", "80909008651");
         phoneBook.add("Инопланетянин Кеша", "++K90233LF");
         phoneBook.add("Феликс Романовский", "89057638123");
-        String expected = phoneBook.findByNumber("Инопланетянин Кеша");
+        String expected = phoneBook.findByName("Инопланетянин Кеша");
         String actual = "++K90233LF";
         Assertions.assertSame(expected, actual);
     }
