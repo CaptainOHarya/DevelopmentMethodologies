@@ -109,7 +109,7 @@ public class PhoneBookTest {
     }
 
     @Test
-    // проверка поиска по имени
+    // печать всех имён
     public void testPrintAllNames() {
         PhoneBook phoneBook = new PhoneBook();
         phoneBook.add("Лилия", "89090123763");
